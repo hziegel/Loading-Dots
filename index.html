@@ -1,0 +1,43 @@
+<html>
+<header>
+<style>
+
+body {
+                font-family:verdana;
+}
+
+#loading-dots {
+                display:none;
+}
+
+</style>
+<script>
+
+var dots = window.setInterval( function() {
+    var wait = document.getElementById("wait");
+    if ( wait.innerHTML.length > 2 )
+        wait.innerHTML = "";
+    else
+        wait.innerHTML += ".";
+    }, 400);
+
+var toggleVisibility = function(element) {
+    if(element.style.display=='block'){
+        element.style.display='none';
+    } else {
+        element.style.display='block';
+    }
+};
+
+</script>
+</header>
+<body>
+
+<button onclick="toggleVisibility(document.getElementById('loading-dots'))">Click to Load</button>
+
+<div id="loading-dots">
+  Loading<span id="wait">.</span>
+</div>
+
+</body>
+</html>
